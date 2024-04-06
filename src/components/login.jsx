@@ -9,7 +9,7 @@ export const Login = () => {
         Get started with Teachable
       </h1>
 
-      <p className="justify-center items-center text-center text-gray-600 text-md border border-red-500 w-[90%] md:w-full">
+      <p className="justify-center items-center text-center text-gray-600 text-sm  w-[80%] md:w-screen">
         Join more than 100,000 creators who've sold over{" "}
         <span className=" font-bold">$1 billion</span> in courses and coaching.
       </p>
