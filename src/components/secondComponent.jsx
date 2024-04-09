@@ -1,6 +1,6 @@
 export const SecondComponent = () => {
   return (
-    <div className="flex flex-col justify-between p-6 items-start w-[80%] md:w-[60%] lg:w-[40%] h-full gap-6">
+    <div className="flex flex-col justify-between p-6 items-start w-[90%] md:w-[70%] lg:w-[40%] h-full gap-6">
       <div className="flex flex-col justify-start gap-8">
         <p className=" text-3xl font-medium">
           Tell us a little more about yourself
