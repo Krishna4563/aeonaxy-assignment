@@ -12,7 +12,7 @@ export const SecondComponent = () => {
 
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-1 w-[100%]">
-          <p>Do you currently run an online business?</p>
+          <p className=" font-bold">Do you currently run an online business?</p>
           <div className=" ">
             <select
               type="text"
@@ -26,7 +26,7 @@ export const SecondComponent = () => {
         </div>
 
         <div className="flex flex-col gap-1 w-[100%]">
-          <p>I primarily identify as a:</p>
+          <p className=" font-bold">I primarily identify as a:</p>
           <div className=" ">
             <select
               type="text"
@@ -43,7 +43,9 @@ export const SecondComponent = () => {
         </div>
 
         <div className="flex flex-col gap-1  w-[100%]">
-          <p>Are you already teaching or offering content online?</p>
+          <p className=" font-bold">
+            Are you already teaching or offering content online?
+          </p>
           <div className=" ">
             <select
               type="text"
@@ -59,7 +61,7 @@ export const SecondComponent = () => {
         </div>
 
         <div className="flex flex-col gap-1 w-[100%]">
-          <p>
+          <p className=" font-bold">
             How big is your current audience (email list, social media
             followers, subscribers, etc.)?
           </p>
@@ -77,7 +79,9 @@ export const SecondComponent = () => {
         </div>
 
         <div className="flex flex-col gap-1 w-[100%]">
-          <p>Which topic is most relevant to your business or content?</p>
+          <p className=" font-bold">
+            Which topic is most relevant to your business or content?
+          </p>
           <div className=" ">
             <select
               type="text"
@@ -92,7 +96,7 @@ export const SecondComponent = () => {
         </div>
 
         <div className="flex flex-col gap-1 w-[100%]">
-          <p>
+          <p className=" font-bold">
             Approximately how much money do you make charging for your knowledge
             today (in courses, consulting, books, speaking, etc.)? We ask this
             so that we can provide you with relevant resources for the size and
@@ -103,6 +107,7 @@ export const SecondComponent = () => {
               type="text"
               className=" border border-black w-[100%] rounded outline-none py-2 p-3"
             >
+              <option value="">Please choose an option...</option>
               <option value="">Less than 20K</option>
               <option value="option1">More than 20K</option>
               <option value="option2">I prefer not to answer</option>
@@ -111,7 +116,7 @@ export const SecondComponent = () => {
         </div>
 
         <div className="flex flex-col gap-1 w-[100%] py-2">
-          <p>
+          <p className=" font-bold">
             What are you hoping to do first on Teachable? (Select up to 3 to get
             started as quickly as possible)
           </p>
@@ -156,7 +161,7 @@ export const SecondComponent = () => {
           </div>
 
           <div className="flex flex-col gap-1 w-[100%] py-2">
-            <p>
+            <p className=" font-bold">
               How much content or training material (videos, worksheets,
               downloads, etc.) have you already prepared?
             </p>
