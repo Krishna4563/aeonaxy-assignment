@@ -11,22 +11,21 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const handleRoute = () => {
-    if (
-      (fullName.trim() &&
-        email.trim() &&
-        password &&
-        confirmPassword &&
-        agreeTerms) !== "" &&
-      password === confirmPassword &&
-      agreeTerms
-    ) {
-      setTimeout(() => {
-        navigate("/form");
-        window.scrollTo(0, 0);
-      }, 800);
-    } else {
-      alert("Error in inputs");
-    }
+    // if (
+    //   (fullName.trim() &&
+    //     email.trim() &&
+    //     password &&
+    //     confirmPassword &&
+    //     agreeTerms) !== "" &&
+    //   password === confirmPassword &&
+    //   agreeTerms
+    // ) {
+    //   setTimeout(() => {
+    //     navigate("/form");
+    //     window.scrollTo(0, 0);
+    //   }, 800);
+    // }
+    navigate("/form");
   };
 
   const handleSubmit = (event) => {
@@ -53,7 +52,7 @@ export const Login = () => {
       return alert("Password must be same");
     }
 
-    console.log("Form submitted");
+    handleRoute();
   };
 
   const handleChange = (event, setValue) => {
@@ -155,7 +154,7 @@ export const Login = () => {
 
         <div className="flex justify-center items-center">
           <button
-            className="px-4 py-2 bg-black text-white w-[60%] text-md rounded"
+            className="px-4 py-2 bg-black text-white w-[60%] md:w-[80%] text-md rounded"
             type="submit"
             onClick={handleRoute}
           >
