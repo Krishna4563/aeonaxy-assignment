@@ -4,7 +4,7 @@ import { Login } from "../components/login";
 export const HomeRoute = () => {
   return (
     <div className="flex flex-col gap-8 justify-center items-center">
-      <div className="w-screen">
+      <div className="w-full">
         <Header />
       </div>
 

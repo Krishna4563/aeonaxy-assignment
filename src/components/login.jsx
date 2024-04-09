@@ -10,49 +10,38 @@ export const Login = () => {
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
 
-  const handleRoute = () => {
-    // if (
-    //   (fullName.trim() &&
-    //     email.trim() &&
-    //     password &&
-    //     confirmPassword &&
-    //     agreeTerms) !== "" &&
-    //   password === confirmPassword &&
-    //   agreeTerms
-    // ) {
-    //   setTimeout(() => {
-    //     navigate("/form");
-    //     window.scrollTo(0, 0);
-    //   }, 800);
-    // }
-    navigate("/form");
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     setSubmitted(true);
 
-    if (!fullName.trim()) {
-      return;
-    }
-    if (!email.trim()) {
-      return;
-    }
-    if (!password.trim()) {
-      return;
-    }
-    if (!confirmPassword.trim()) {
-      return;
-    }
-    if (!agreeTerms) {
-      return;
-    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (password.trim() !== confirmPassword.trim()) {
-      return alert("Password must be same");
-    }
+    if (
+      fullName.trim() &&
+      email.trim() &&
+      password &&
+      confirmPassword &&
+      password.trim() === confirmPassword.trim() &&
+      agreeTerms &&
+      emailRegex.test(email)
+    ) {
+      setTimeout(() => {
+        navigate("/form");
+        window.scrollTo(0, 0);
+      }, 400);
+    } else {
+      if (password.trim() !== confirmPassword.trim()) {
+        alert("Password must match Confirm Password");
+      }
 
-    handleRoute();
+      if (!emailRegex.test(email)) {
+        alert("Invalid email format");
+      }
+
+      if (!agreeTerms) {
+        alert("Please agree to the Terms of Use and Privacy Policy");
+      }
+    }
   };
 
   const handleChange = (event, setValue) => {
@@ -64,7 +53,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="flex flex-col justify-between items-center">
+    <div className="flex flex-col justify-between items-center mb-8">
       <h1 className="font-medium font-serif text-black text-3xl text-center mb-6">
         Get started with Teachable
       </h1>
@@ -74,10 +63,7 @@ export const Login = () => {
         <span className=" font-bold">$1 billion</span> in courses and coaching.
       </p>
 
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col justify-between gap-5 w-[80%] md:w-[65%] lg:w-[35%] h-[38vh]"
-      >
+      <form className="flex flex-col justify-between gap-5 w-[80%] md:w-[65%] lg:w-[35%]">
         <div className="flex flex-col">
           <h2 className=" font-medium text-gray-500">Full Name</h2>
           <input
@@ -155,8 +141,7 @@ export const Login = () => {
         <div className="flex justify-center items-center">
           <button
             className="px-4 py-2 bg-black text-white w-[60%] md:w-[80%] text-md rounded"
-            type="submit"
-            onClick={handleRoute}
+            onClick={handleSubmit}
           >
             Create Account
           </button>
